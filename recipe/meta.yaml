@@ -10,7 +10,7 @@ source:
   sha256: 857af6169d90e4a0a814130b9b107f5d611150ce440107e1c1233521c6fb1e2b
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
@@ -19,7 +19,7 @@ requirements:
     - python
   run:
     - python
-    - matplotlib
+    - matplotlib-base
     - numpy
     - opencv
     - scipy
