@@ -1,12 +1,11 @@
-{% set name = "imutils" %}
 {% set version = "0.5.4" %}
 
 package:
-  name: {{ name|lower }}
+  name: imutils
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/i/imutils/imutils-{{ version }}.tar.gz
   sha256: 03827a9fca8b5c540305c0844a62591cf35a0caec199cb0f2f0a4a0fb15d8f24
 
 build:
