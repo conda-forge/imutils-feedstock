@@ -9,22 +9,25 @@ source:
   sha256: 03827a9fca8b5c540305c0844a62591cf35a0caec199cb0f2f0a4a0fb15d8f24
 
 build:
-  number: 5
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
+  noarch: python
+  number: 6
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python
     - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - matplotlib-base
     - numpy
     - opencv
     - scipy
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - imutils
     - imutils.face_utils
@@ -44,3 +47,4 @@ about:
 extra:
   recipe-maintainers:
     - h-vetinari
+    - ehfd
